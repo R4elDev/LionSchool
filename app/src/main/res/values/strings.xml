@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lionSchool</string>
+    <string name="lion_school">Lion School</string>
+    <string name="branding">Find your favorite course</string>
+    <string name="branding_description">Get your destination faster, study at the best vocational school in Brazil. Be the best version of yourself.</string>
+    <string name="bottom_home">Get Started</string>
+    <string name="youtube_description">Youtube</string>
+    <string name="twiter_description">Twiter</string>
+    <string name="instagram_description">Instagram</string>
+    <string name="facebook_description">Facebook</string>
+</resources>
