@@ -8,4 +8,6 @@
     <string name="twiter_description">Twiter</string>
     <string name="instagram_description">Instagram</string>
     <string name="facebook_description">Facebook</string>
+    <string name="outline_course">Find your course</string>
+    <string name="course">Course</string>
 </resources>
