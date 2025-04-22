@@ -9,7 +9,10 @@
     <string name="instagram_description">Instagram</string>
     <string name="facebook_description">Facebook</string>
     <string name="outline_course">Find your course</string>
+    <string name="outline_course_student">Find a student</string>
+
     <string name="course">Courses</string>
+    <string name="students_list">Students List</string>
 
     <string name="ds">DS</string>
     <string name="ds_title">Desenvolvimento de Sistemas</string>
