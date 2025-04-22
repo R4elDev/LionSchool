@@ -9,5 +9,19 @@
     <string name="instagram_description">Instagram</string>
     <string name="facebook_description">Facebook</string>
     <string name="outline_course">Find your course</string>
-    <string name="course">Course</string>
+    <string name="course">Courses</string>
+
+    <string name="ds">DS</string>
+    <string name="ds_title">Desenvolvimento de Sistemas</string>
+    <string name="ds_description">Learn to develop web and mobile applications</string>
+
+    <string name="rds">RDS</string>
+    <string name="rds_title">Redes de Computadores</string>
+    <string name="rds_description">Learn to design communication networks.</string>
+
+    <string name="ele">ELE</string>
+    <string name="ele_title">Eletroeletrônica</string>
+    <string name="ele_description">Learn to design eletronic boards</string>
+
+    <string name="semester">3 semesters</string>
 </resources>

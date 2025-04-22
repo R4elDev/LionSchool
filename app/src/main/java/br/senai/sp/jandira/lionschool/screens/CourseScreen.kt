@@ -1,12 +1,12 @@
 package br.senai.sp.jandira.lionschool.screens
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -22,9 +21,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,6 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.lionschool.R
+import br.senai.sp.jandira.lionschool.screens.components.lionComponent
 
 @Composable
 fun CourseScreen(){
@@ -128,7 +126,37 @@ fun CourseScreen(){
                         .padding(horizontal = 5.dp)
                 )
             }
-
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceEvenly
+            ) {
+                lionComponent(
+                    imageLogo = painterResource(id = R.drawable.ds),
+                    textIcon = stringResource(R.string.ds),
+                    textTitle = stringResource(R.string.ds_title),
+                    textDescription = stringResource(R.string.ds_description),
+                    textSemester = stringResource(R.string.semester),
+                    isFilled = true
+                )
+                lionComponent(
+                    imageLogo = painterResource(id = R.drawable.rds),
+                    textIcon = stringResource(R.string.rds),
+                    textTitle = stringResource(R.string.rds_title),
+                    textDescription = stringResource(R.string.rds_description),
+                    textSemester = stringResource(R.string.semester),
+                    isFilled = true
+                )
+                lionComponent(
+                    imageLogo = painterResource(id = R.drawable.ele),
+                    textIcon = stringResource(R.string.ele),
+                    textTitle = stringResource(R.string.ele_title),
+                    textDescription = stringResource(R.string.ele_description),
+                    textSemester = stringResource(R.string.semester),
+                    isFilled = true
+                )
+            }
         }
     }
 }

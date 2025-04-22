@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.lionschool.screens.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -11,14 +12,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -29,13 +31,19 @@ import br.senai.sp.jandira.lionschool.R
 
 @Composable
 fun lionComponent(
-
-
+    imageLogo: Painter = painterResource(id = R.drawable.ds),
+    textIcon: String = "",
+    textTitle: String = "",
+    textDescription: String = "",
+    textSemester: String = "",
+    isFilled: Boolean = false
 ){
     Card(
         modifier = Modifier
             .width(322.dp)
-            .height(209.dp),
+            .height(190.dp),
+        shape = RoundedCornerShape(15.dp),
+        border = BorderStroke(1.dp, colorResource(R.color.lion_color_yellow))
     ) {
         Box(
             modifier = Modifier
@@ -61,26 +69,27 @@ fun lionComponent(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.programming),
+                        painter = if(isFilled) imageLogo else painterResource(id = R.drawable.image_not_found),
                         contentDescription = "",
                         modifier = Modifier
                             .height(102.dp)
                             .width(101.dp)
                     )
                     Text(
-                        text = "DS",
+                        text = textIcon,
                         fontSize = 64.sp,
-                        color = colorResource(R.color.lion_color_yellow)
+                        color = colorResource(R.color.lion_color_yellow),
+                        fontWeight = FontWeight.ExtraBold
                     )
                 }
                 Column() {
                     Text(
-                        text = "Desenvolvimento de Sistemas",
+                        text = textTitle,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Learn to develop web and mobile applications.",
+                        text = textDescription,
                         color = Color.White,
                         fontWeight = FontWeight.Thin
                     )
@@ -98,7 +107,7 @@ fun lionComponent(
                             .height(15.dp)
                     )
                     Text(
-                        text = "3 semestres",
+                        text = textSemester,
                         color = Color.White,
                         modifier = Modifier
                             .padding(horizontal = 5.dp)
