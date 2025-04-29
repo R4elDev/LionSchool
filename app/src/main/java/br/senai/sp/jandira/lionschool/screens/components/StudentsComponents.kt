@@ -24,18 +24,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.painter.Painter
 
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.lionschool.R
 
 @Composable
-fun studentsComponents() {
+fun studentsComponents(
+    imagePerson: Painter = painterResource(id = R.drawable.lion_user),
+    personName: String = "",
+    registrationNumber: String = "",
+    isFilled: Boolean = false
+    ) {
     Card(
         modifier = Modifier
             .width(320.dp)
@@ -52,6 +59,7 @@ fun studentsComponents() {
         ) {
             Card(
                 modifier = Modifier
+                    .weight(1f)
                     .width(12.dp)
                     .fillMaxHeight(),
                 colors = CardDefaults.cardColors(
@@ -61,24 +69,34 @@ fun studentsComponents() {
             ) {}
             Row(
                 modifier = Modifier
+                    .weight(20f)
+                    .padding(5.dp)
                     .fillMaxHeight(),
                 verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.lion_user),
+                    painter = if(isFilled) imagePerson else painterResource(id = R.drawable.image_not_found),
                     contentDescription = "",
                     modifier = Modifier
                         .height(40.dp)
                         .width(40.dp)
                 )
-                Column {
+                Column(
+                    modifier = Modifier
+                        .padding(10.dp),
+                    horizontalAlignment = Alignment.Start
+                ) {
                     Text(
-                        text = "Luana Oliveira Dias",
+                        text = personName,
                         fontSize = 16.sp,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
                     )
-                    Row {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
                         Image(
                             imageVector = Icons.Default.AccountBox,
                             contentDescription = "",
@@ -91,7 +109,7 @@ fun studentsComponents() {
                         )
 
                         Text(
-                            text = "3967591022",
+                            text = registrationNumber,
                             color = Color.White,
                             fontSize = 10.sp,
                             fontWeight = FontWeight.Thin
@@ -101,17 +119,28 @@ fun studentsComponents() {
             }
             Row(
                 modifier = Modifier
+                    .weight(5f)
                     .fillMaxHeight()
                     .padding(8.dp),
                 verticalAlignment = Alignment.Bottom,
+                horizontalArrangement = Arrangement.Center
             ) {
                 Image(
-                    imageVector = Icons.Default.DateRange,
-                    contentDescription = ""
+                    painter = painterResource(id = R.drawable.calendario),
+                    contentDescription = "",
+                    modifier = Modifier
+                        .width(10.dp)
+                        .height(12.dp)
+                        .padding()
                 )
                 Text(
                     text = "2025",
-                    color = colorResource(R.color.lion_color_yellow)
+                    color = colorResource(R.color.lion_color_yellow),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 10.sp,
+                    textAlign = TextAlign.End,
+                    modifier = Modifier
+                        .width(25.dp)
                 )
             }
 

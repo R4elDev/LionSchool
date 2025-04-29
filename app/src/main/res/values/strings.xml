@@ -27,4 +27,8 @@
     <string name="ele_description">Learn to design eletronic boards</string>
 
     <string name="semester">3 semesters</string>
+
+    <string name="todos">Todos</string>
+    <string name="cursando">Cursando</string>
+    <string name="finalizando">Finalizando</string>
 </resources>
